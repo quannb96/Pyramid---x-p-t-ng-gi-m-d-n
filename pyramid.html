@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+</head>
+<body>
+    <div>
+      <p>
+        <h2>10. Ascending an integer number and print the triangle</h2>
+      </p>
+      <p>N: <input type="text" id="nTriangle" /></p>
+      <button type="button" id="btnTriangle">Show Ascending</button>
+      <p id="showTriangle">&nbsp;</p>
+    </div>
+    <div>
+      <p>
+        <h2>11. Decrease an integer number and print the triangle</h2>
+      </p>
+      <p>N: <input type="text" id="nDecrease" /></p>
+      <button type="button" id="btnDecrease">Show Decrease</button>
+      <p id="showDecrease">&nbsp;</p>
+    </div>
+
+    <script>
+    const $ = function(id) {return document.getElementById(id)};
+
+    $("btnTriangle").addEventListener("click", () => {
+        $("showTriangle").innerHTML = "";
+        let nTriangle = $("nTriangle").value;
+
+        for (let n = 1; n <= nTriangle; n++) {
+            for (let j = 1; j <= n; j++) {
+                $("showTriangle").innerHTML += '<i class="fa-solid fa-star-half-stroke"></i> ';
+            }
+                $("showTriangle").innerHTML += "<br>";
+        }
+    })
+// ========= print the triangle Decrease ======
+    $("btnDecrease").addEventListener("click", () => {
+        $("showDecrease").innerHTML = "";
+        let nDecrease = $("nDecrease").value;
+
+        for (let n = nDecrease; n >= 1; n--) {
+            for (let j = n; j >=1 ; j--) {
+                $("showDecrease").innerHTML += '<i class="fa-solid fa-star-half-stroke"></i> ';
+            }
+                $("showDecrease").innerHTML += "<br>";
+        }
+    })
+    </script>
+</body>
+</html>
